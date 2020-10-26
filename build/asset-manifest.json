@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3d6ab58e.chunk.css",
+    "main.js": "/static/js/main.ef44b612.chunk.js",
+    "main.js.map": "/static/js/main.ef44b612.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6634187b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6634187b.js.map",
+    "static/js/2.1b23d7b7.chunk.js": "/static/js/2.1b23d7b7.chunk.js",
+    "static/js/2.1b23d7b7.chunk.js.map": "/static/js/2.1b23d7b7.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b2f1a65b63d50a6fafcaf0a5e2c765e9.js": "/precache-manifest.b2f1a65b63d50a6fafcaf0a5e2c765e9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.3d6ab58e.chunk.css.map": "/static/css/main.3d6ab58e.chunk.css.map",
+    "static/js/2.1b23d7b7.chunk.js.LICENSE.txt": "/static/js/2.1b23d7b7.chunk.js.LICENSE.txt",
+    "static/media/logos.svg": "/static/media/logos.57a7f831.svg",
+    "static/media/parrot1.webp": "/static/media/parrot1.3e77b36a.webp",
+    "static/media/parrot2.webp": "/static/media/parrot2.58035413.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6634187b.js",
+    "static/js/2.1b23d7b7.chunk.js",
+    "static/css/main.3d6ab58e.chunk.css",
+    "static/js/main.ef44b612.chunk.js"
+  ]
+}
