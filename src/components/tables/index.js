@@ -1,23 +1,30 @@
 import { BlockAPI, ButtonAPI, CodeBlockAPI, LayerAPI } from "./APIs";
 import {
+  BreakpointsTable,
   DropdownSubcomponents,
   FormSubcomponents,
-  BreakpointsTable,
 } from "./breakdowns";
 
-export { BlockAPI, ButtonAPI, CodeBlockAPI, LayerAPI } from "./APIs";
 export {
+  BlockAPI,
+  ButtonAPI,
+  CodeBlockAPI,
+  DropdownAPI,
+  LayerAPI,
+} from "./APIs";
+
+export {
+  BreakpointsTable,
   DropdownSubcomponents,
   FormSubcomponents,
-  BreakpointsTable,
 } from "./breakdowns";
 
 export const tables = {
   BlockAPI,
+  BreakpointsTable,
   ButtonAPI,
   CodeBlockAPI,
-  LayerAPI,
   DropdownSubcomponents,
   FormSubcomponents,
-  BreakpointsTable,
+  LayerAPI,
 };

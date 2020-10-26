@@ -1,24 +1,24 @@
 /* React */
 import React from "react";
-/* react-router */
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 /* Thorium-UI */
-import { ThoriumRoot } from "thorium-ui";
-/* Custom components */
-import { TopNav } from "components";
-
-/* Page content components */
-import components from "pages/components";
-import general from "pages/general";
-import Error404 from "pages/errors/404";
-import test from "pages/test";
+import { ThoriumRoot, Layer } from "thorium-ui";
+/* Customization */
 import customStyles from "./customStyles";
 import customThemes from "./customThemes";
+/* React-Router */
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+/* Custom Components */
+import { TopNav, SideMenu } from "components";
+/* Pages */
+import Components from "pages/components";
+import General from "pages/general";
+import Error404 from "pages/errors/404";
+import Hooks from "pages/hooks/hooks";
+import Test from "pages/test";
 
 export const App = () => {
   // Defines object containing all page content components
-  const pages = { ...general, ...components };
+  const pages = { ...General, ...Components, Hooks };
 
   // Create an array to hold all possible routes
   const routes = [];
@@ -37,15 +37,18 @@ export const App = () => {
       defaultTheme="dark"
       enableReactRouter
       customStyles={customStyles}
-      customTheme={customThemes}
+      customThemes={customThemes}
     >
       <Router>
         <TopNav />
-        <Switch>
-          {renderedRoutes}
-          <Route path="/test" exact component={test} />
-          <Route component={Error404} />
-        </Switch>
+        <Layer style={{ marginLeft: 0, marginRight: 0 }}>
+          <SideMenu />
+          <Switch>
+            {renderedRoutes}
+            <Route path="/test" exact component={Test} />
+            <Route component={Error404} />
+          </Switch>
+        </Layer>
       </Router>
     </ThoriumRoot>
   );

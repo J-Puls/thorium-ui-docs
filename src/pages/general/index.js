@@ -1,15 +1,15 @@
-import { LayoutDetails } from "./layout";
-import { StylesDetails } from "./styles";
-import { ThemeControlDetails } from "./themeControl";
-import { CustomThemesDetails } from "./themeCustomization";
+import { CustomStylesDetails } from "./customStyles";
+import { CustomThemesDetails } from "./customThemes";
 import { GettingStartedDetails } from "./gettingStarted";
+import { LayoutDetails } from "./layout";
 import { PaletteDetails } from "./palette";
+import { ThemeControlDetails } from "./themeControl";
 
 export default {
   "": GettingStartedDetails,
+  "custom-styles": CustomStylesDetails,
+  "custom-themes": CustomThemesDetails,
   layout: LayoutDetails,
-  styles: StylesDetails,
-  "theme-control": ThemeControlDetails,
-  "theme-customization": CustomThemesDetails,
   palette: PaletteDetails,
+  "theme-control": ThemeControlDetails
 };

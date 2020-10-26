@@ -1,3 +1,4 @@
+export { MetaNav } from "./metaNav";
 export { MobileMenu } from "./mobileMenu";
 export { PageBody } from "./pageBody";
 export { PageFooter } from "./pageFooter";

@@ -1,30 +1,38 @@
 import { colors, Themes } from "thorium-ui";
 
-const customThemes = { ...Themes };
-
-const customLight = {
-  topNav: { backgroundColor: colors.light.primaryHover },
-  footer: { backgroundColor: colors.neutral.w2 },
+const light = {
+  h2: {
+    color: colors.neutral.b3,
+  },
+  iconFill: colors.neutral.b0,
+  pageFooter: {
+    backgroundColor: colors.neutral.w3,
+  },
   sideMenu: {
-    backgroundColor: colors.neutral.w4,
+    backgroundColor: colors.neutral.w3,
     boxShadow: `2px 0px 0px 0px ${colors.light.primaryHover}`,
   },
-  h2: { color: colors.neutral.b3 },
-  iconFill: colors.neutral.b0,
+  topNav: {
+    backgroundColor: colors.light.primaryHover,
+  },
 };
 
-const customDark = {
-  topNav: { backgroundColor: colors.neutral.b3 },
-  footer: { backgroundColor: colors.neutral.b5 },
-  sideMenu: {
-    backgroundColor: colors.neutral.b3,
-    boxShadow: "2px 0px 2px 0px #000000aa",
+const dark = {
+  body: {
+    ...Themes.dark.body,
+    "background-color": colors.neutral.b0,
   },
-  h2: { color: colors.neutral.w2 },
+  topNav: { backgroundColor: colors.neutral.b2 },
+  metaNav: {
+    boxShadow: "inset 2px 0px 2px 0px #000000aa",
+  },
+  pageFooter: { backgroundColor: colors.neutral.b1 },
+  sideMenu: {
+    backgroundColor: colors.neutral.b1,
+    boxShadow: "inset 2px 0px 2px 0px #000000aa",
+  },
   iconFill: colors.neutral.w4,
 };
 
-customThemes.dark = { ...customThemes.dark, ...customDark };
-customThemes.light = { ...customThemes.light, ...customLight };
-
+const customThemes = { dark, light };
 export default customThemes;
