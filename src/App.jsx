@@ -1,35 +1,42 @@
 /* React */
-import React from "react";
+import React, { useState } from "react";
 /* Thorium-UI */
-import { ThoriumRoot, Layer } from "thorium-ui";
+import { ThoriumRoot, Layer, MessageBox, Link } from "thorium-ui";
 /* Customization */
 import customStyles from "./customStyles";
 import customThemes from "./customThemes";
-/* React-Router */
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+/* React-Router-DOM */
+import { BrowserRouter as Router } from "react-router-dom";
 /* Custom Components */
-import { TopNav, SideMenu } from "components";
-/* Pages */
-import Components from "pages/components";
-import General from "pages/general";
-import Error404 from "pages/errors/404";
-import Hooks from "pages/hooks/hooks";
-import Test from "pages/test";
+import { TopNav, SideMenu, MetaNav, PageBody } from "components";
 
 export const App = () => {
-  // Defines object containing all page content components
-  const pages = { ...General, ...Components, Hooks };
+  const [messages, setMessages] = useState([
+    {
+      props: {
+        variant: "primary",
+        contents: (
+          <span>
+            Want to help develop Thorium-UI? Check out the
+            <Link
+              useParentColor
+              asAnchor
+              href="https://github.com/J-Puls/thorium-ui"
+            >
+              official GitHub repo
+            </Link>{" "}
+            to learn more, your help is appreciated!
+          </span>
+        ),
+      },
+    },
+  ]);
 
-  // Create an array to hold all possible routes
-  const routes = [];
-  for (let key in pages) {
-    routes.push({ path: `/${key}`, component: pages[key] });
-  }
-
-  // Map each route to a react-router Route
-  const renderedRoutes = routes.map(({ path, component }, key) => (
-    <Route exact path={path} component={component} key={key} />
-  ));
+  const handleRemove = (id) => {
+    let messagesCopy = [...messages];
+    messagesCopy[id].props.isDismissed = true;
+    setMessages(messagesCopy);
+  };
 
   return (
     <ThoriumRoot
@@ -40,14 +47,12 @@ export const App = () => {
       customThemes={customThemes}
     >
       <Router>
+        <MessageBox messages={messages} onRemove={handleRemove} />
         <TopNav />
         <Layer style={{ marginLeft: 0, marginRight: 0 }}>
           <SideMenu />
-          <Switch>
-            {renderedRoutes}
-            <Route path="/test" exact component={Test} />
-            <Route component={Error404} />
-          </Switch>
+          <PageBody />
+          <MetaNav />
         </Layer>
       </Router>
     </ThoriumRoot>

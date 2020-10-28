@@ -11,7 +11,7 @@ import {
   LayerAPI,
   LayerExample,
   LayoutDiagram,
-  PageBody,
+  
   PageSection,
   SampleCodeDropdown,
 } from "components";
@@ -21,7 +21,7 @@ export const LayoutDetails = () => {
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Layout Basics</p>
       <p style={cs.subheading}>
         Thorium-UI uses a flex-box-based grid system to enable responsive layout
@@ -127,6 +127,6 @@ export const LayoutDetails = () => {
           </Block>
         </Layer>
       </PageSection>
-    </PageBody>
+    </>
   );
 };

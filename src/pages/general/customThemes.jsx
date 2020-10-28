@@ -3,7 +3,7 @@ import React from "react";
 /* Thorium-UI */
 import { Code, useCustomStyles, useTheme } from "thorium-ui";
 /* Custom Components */
-import { HCodeBlock, PageBody, PageSection } from "components";
+import { HCodeBlock, PageSection } from "components";
 
 export const CustomThemesDetails = () => {
   const theme = useTheme();
@@ -11,7 +11,7 @@ export const CustomThemesDetails = () => {
 
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Custom Themes</p>
       <p style={cs.subheading}>
         It is easy to customize the built-in themes any way you see fit. This
@@ -84,7 +84,7 @@ export default customThemes;`}
             `{ body: { "background-color": "purple"} } //correct`}
         </HCodeBlock>
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 export default CustomThemesDetails;

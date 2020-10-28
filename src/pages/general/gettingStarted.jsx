@@ -9,7 +9,7 @@ import {
   useThemeName,
 } from "thorium-ui";
 /* Custom Components */
-import { HCodeBlock, PageBody, PageSection } from "components";
+import { HCodeBlock, PageSection } from "components";
 
 export const GettingStartedDetails = () => {
   const themeName = useThemeName();
@@ -18,7 +18,7 @@ export const GettingStartedDetails = () => {
   const h2 = { ...cs.h2, ...theme.h2 };
 
   return (
-    <PageBody>
+    <>
       <PageSection>
         <Layer justify="center" style={{ marginTop: "3rem" }}>
           <img
@@ -27,6 +27,7 @@ export const GettingStartedDetails = () => {
             width="100%"
             style={{
               filter: themeName === "light" ? "invert(100%)" : null,
+              transitionDuration: ".3s",
             }}
           />
         </Layer>
@@ -91,6 +92,6 @@ export default App;`}
       <p style={{ ...cs.subheading, textAlign: "center" }}>
         With that finished, you're now ready to begin using Thorium-UI!
       </p>
-    </PageBody>
+    </>
   );
 };

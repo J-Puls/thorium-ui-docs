@@ -1,5 +1,5 @@
 /* React */
-import React, { useContext, useRef } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 /* Thorium-UI */
 import {
   Block,
@@ -8,11 +8,13 @@ import {
   Layer,
   ThemeToggle,
   useTheme,
+  useThemeName,
   useViewportSizeName,
   ThoriumContext,
 } from "thorium-ui";
 /* Custom Components */
 import { MobileMenu } from "./mobileMenu";
+
 /* Assets */
 import logos from "assets/logos.svg";
 
@@ -20,7 +22,14 @@ export const TopNav = () => {
   const cs = useContext(ThoriumContext).customStyles;
   const burger = useRef();
   const theme = useTheme();
+  const themeName = useThemeName();
   const viewportSizeName = useViewportSizeName();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
+
   return (
     <>
       <Layer
@@ -35,7 +44,7 @@ export const TopNav = () => {
             <Block style={{ paddingLeft: 0, paddingRight: 0 }}>
               <a href="/" rel="noopener noreferrer" title="Home">
                 <Icon
-                  fill={"#ffffff"}
+                  fill="#ffffff"
                   height={30}
                   src={`${logos}#thorium-logo-full`}
                   width={130}
@@ -43,7 +52,10 @@ export const TopNav = () => {
               </a>
             </Block>
 
-            <Block justify="end" style={{ paddingRight: 0 }}>
+            <Block
+              justify="end"
+              style={{ paddingRight: 0, fontStyle: "italic" }}
+            >
               <ThemeToggle
                 size="lg"
                 offState="dark"
@@ -52,9 +64,7 @@ export const TopNav = () => {
                   marginBottom: 10,
                 }}
                 label={
-                  ["md", "lg", "xl"].includes(viewportSizeName) && (
-                    <em>{theme.name}</em>
-                  )
+                  ["md", "lg", "xl"].includes(viewportSizeName) ? themeName : ""
                 }
               />
 
@@ -66,7 +76,7 @@ export const TopNav = () => {
                   title="GitHub"
                 >
                   <Icon
-                    fill={"#ffffff"}
+                    fill="#ffffff"
                     height={30}
                     src={`${logos}#gitLogo`}
                     width={30}
@@ -76,7 +86,7 @@ export const TopNav = () => {
               {["xs", "sm"].includes(viewportSizeName) && (
                 <BurgerButton
                   aria-label="mobile-menu-trigger"
-                  iconFill={"#ffffff"}
+                  iconFill="#ffffff"
                   id="mobileMenuBtn"
                   overrideFill
                   ref={burger}
@@ -88,9 +98,13 @@ export const TopNav = () => {
           </Layer>
         </Block>
       </Layer>
-      {["xs", "sm"].includes(viewportSizeName) && (
-        <MobileMenu toggleBurger={() => burger.current.toggle()} />
-      )}
+      <MobileMenu
+        toggleBurger={() => {
+          burger.current.toggle();
+        }}
+        onToggle={(state) => setMenuOpen(state)}
+        isOpen={menuOpen}
+      />
     </>
   );
 };

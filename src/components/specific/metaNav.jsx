@@ -1,74 +1,47 @@
 /* React */
-import React, { useEffect, useState } from "react";
+import React from "react";
+/* React-Router */
+import { useLocation } from "react-router";
 /* Thorium-UI */
 import {
-  Block,
   Nav,
   useCustomStyles,
   useTheme,
   useViewportSizeName,
 } from "thorium-ui";
-/* React-Router */
-import { useHistory } from "react-router";
 /* Page Anchors */
 import { anchors } from "../../pages/anchors";
 
-export const MetaNav = (props) => {
+export const MetaNav = () => {
   const theme = useTheme();
   const cs = useCustomStyles();
   const vpSizeName = useViewportSizeName();
-  const history = useHistory();
-  const [location, setLocation] = useState(history.location.pathname);
-  useEffect(() => {
-    setLocation(history.location.pathname);
-  }, [history.location.pathname]);
+  const location = useLocation();
+
+  // Only process and render component if viewport is larger than "md"
+  if (!["lg", "xl"].includes(vpSizeName)) return <></>;
 
   const scrollToHash = (hash) => {
     document.getElementById(hash).scrollIntoView({ behavior: "smooth" });
   };
+  // Generates NavLinks if an anchor list is found, else returns nothing
+  const metaLinks = anchors[location.pathname]
+    ? anchors[location.pathname].map((a) => (
+        <Nav.Link
+          asAnchor
+          key={a.anchorName}
+          navkey={a.anchorName}
+          onClick={() => scrollToHash(`${a.anchorName}`)}
+        >
+          {a.text}
+        </Nav.Link>
+      ))
+    : null;
 
-  const metaLinks = anchors[location] ? (
-    anchors[location].map((a) => (
-      <Nav.Link
-        asAnchor
-        key={a.anchorName}
-        navkey={a.anchorName}
-        onClick={() => scrollToHash(`${a.anchorName}`)}
-      >
-        {a.text}
-      </Nav.Link>
-    ))
-  ) : (
-    <></>
-  );
-
-  return ["lg", "xl"].includes(vpSizeName) ? (
-    <Block lg={2} xl={2} vertical style={{ ...cs.metaNav, ...theme.metaNav }}>
-      <details open>
-        <summary style={{ cursor: "default" }}>On This Page</summary>
-        <Nav vertical variant="link">
-          <Nav.Link
-            asAnchor
-            navkey="page-top"
-            key={"page-top"}
-            onClick={() => scrollToHash("page-top")}
-          >
-            - Top -
-          </Nav.Link>
-          {metaLinks}
-          <Nav.Link
-            asAnchor
-            navkey="page-bottom"
-            key={"page-bottom"}
-            onClick={() => scrollToHash("page-bottom")}
-          >
-            - Bottom -
-          </Nav.Link>
-        </Nav>
-      </details>
-    </Block>
-  ) : (
-    <></>
+  return (
+    <Nav vertical style={{ ...cs.metaNav, ...theme.metaNav }} variant="link">
+      {metaLinks}
+    </Nav>
   );
 };
 

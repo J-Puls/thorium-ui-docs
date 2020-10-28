@@ -2,8 +2,6 @@
 import React from "react";
 /* Thorium-UI */
 import { Code, useCustomStyles, useTheme } from "thorium-ui";
-/* Custom Components */
-import { PageBody } from "components";
 
 export const HooksDetails = () => {
   const theme = useTheme();
@@ -11,7 +9,7 @@ export const HooksDetails = () => {
   const h2 = { ...cs.h2, ...theme.h2 };
 
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Hooks</p>
       <span style={cs.subheading}>
         Several custom hook functions are provided to easily access different
@@ -96,7 +94,7 @@ export const HooksDetails = () => {
         Returns a string containing the current <Code>viewportSizeName</Code>.
       </p>
       <hr />
-    </PageBody>
+    </>
   );
 };
 export default HooksDetails;

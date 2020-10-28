@@ -3,14 +3,14 @@ import React from "react";
 /* Thorium-UI */
 import { Code, useCustomStyles, useTheme } from "thorium-ui";
 /* Custom Components */
-import { CodeExample, PageBody, PageSection } from "components";
+import { CodeExample, PageSection } from "components";
 
 export const CodeDetails = () => {
   const cs = useCustomStyles();
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Code</p>
       <p style={cs.subheading}>
         A pre-styled {`&`} themed wrapper used to highlight keywords within
@@ -30,7 +30,7 @@ export const CodeDetails = () => {
           information within.
         </p>
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 

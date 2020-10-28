@@ -3,12 +3,7 @@ import React from "react";
 /* Thorium-UI */
 import { Block, Layer, useCustomStyles, useTheme } from "thorium-ui";
 /* Custom Components */
-import {
-  FormExample,
-  FormSubcomponents,
-  PageBody,
-  PageSection,
-} from "components";
+import { FormExample, FormSubcomponents, PageSection } from "components";
 
 export const FormDetails = () => {
   const cs = useCustomStyles();
@@ -16,7 +11,7 @@ export const FormDetails = () => {
   const h2 = { ...cs.h2, ...theme.h2 };
 
   return (
-    <PageBody>
+    <>
       <h1 style={cs.h1}>Form</h1>
 
       <PageSection id="sub-component-layout">
@@ -62,7 +57,7 @@ export const FormDetails = () => {
         <p style={h2}>Example</p>
         <FormExample />
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 export default FormDetails;

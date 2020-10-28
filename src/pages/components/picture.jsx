@@ -9,8 +9,7 @@ import {
   useCustomStyles,
   useTheme,
 } from "thorium-ui";
-/* Custom Components */
-import { PageBody } from "components";
+
 /* Assets */
 import demoImg1 from "assets/images/parrot2.webp";
 import demoImg2 from "assets/images/parrot1.webp";
@@ -20,7 +19,7 @@ export const PictureDetails = () => {
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Picture</p>
       <p style={cs.subheading}>
         The <Code>Picture</Code> component allows for quick implementation of
@@ -58,6 +57,6 @@ export const PictureDetails = () => {
           <p>Rounded</p>
         </Block>
       </Layer>
-    </PageBody>
+    </>
   );
 };

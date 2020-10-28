@@ -16,7 +16,6 @@ import {
   DropdownDiagram,
   DropdownSubcomponents,
   HCodeBlock,
-  PageBody,
   PageSection,
   RemoteTriggerExample,
   SampleCodeDropdown,
@@ -27,7 +26,7 @@ export const DropdownDetails = () => {
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Dropdown</p>
       <p style={cs.subheading}>
         A <Code>Dropdown</Code> is a collapsible menu with a customizable
@@ -200,6 +199,6 @@ export default MyComponent;`}
         <p style={h2}>API</p>
         <DropdownAPI />
       </PageSection>
-    </PageBody>
+    </>
   );
 };
