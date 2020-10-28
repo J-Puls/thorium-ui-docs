@@ -6,7 +6,6 @@ import { Button, Code, Layer, useCustomStyles, useTheme } from "thorium-ui";
 import {
   ButtonAPI,
   HCodeBlock,
-  PageBody,
   PageSection,
   SampleCodeDropdown,
 } from "components";
@@ -16,11 +15,11 @@ export const ButtonDetails = () => {
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Button</p>
       <p style={cs.subheading}>
-        Thorium-UI contains a variety of pre-styled, theme-dependant buttons to
-        fit any purpose.
+        Various <Code>Button</Code> combinations are available to suite any
+        purpose.
       </p>
       <PageSection id="variants">
         <p style={h2}>Variants</p>
@@ -140,6 +139,6 @@ export const ButtonDetails = () => {
           <ButtonAPI />
         </Layer>
       </PageSection>
-    </PageBody>
+    </>
   );
 };

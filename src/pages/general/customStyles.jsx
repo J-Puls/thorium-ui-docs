@@ -3,13 +3,13 @@ import React from "react";
 /* Thorium-UI */
 import { Code, useCustomStyles, useTheme } from "thorium-ui";
 /* Custom Components */
-import { HCodeBlock, PageBody, PageSection } from "components";
+import { HCodeBlock, PageSection } from "components";
 
 export const CustomStylesDetails = () => {
   const cs = useCustomStyles();
   const theme = useTheme();
   return (
-    <PageBody>
+    <>
       <h1 style={cs.h1}>Custom Styles</h1>
       <p style={cs.subheading}>
         Thorium-UI is designed at its core to operate completely without
@@ -146,7 +146,7 @@ render(){
 export default MyComponent;`}
         </HCodeBlock>
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 export default CustomStylesDetails;

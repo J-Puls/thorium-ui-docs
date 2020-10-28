@@ -3,12 +3,7 @@ import React from "react";
 /* Thorium-UI */
 import { Code, useCustomStyles, useTheme } from "thorium-ui";
 /* Custom Components */
-import {
-  HCodeBlock,
-  PageBody,
-  PageSection,
-  SampleCodeDropdown,
-} from "components";
+import { HCodeBlock, PageSection, SampleCodeDropdown } from "components";
 
 export const ThemeControlDetails = () => {
   const theme = useTheme();
@@ -16,7 +11,7 @@ export const ThemeControlDetails = () => {
 
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Theme Control</p>
       <span style={cs.subheading}>
         Implementing theme-responsive applications is super easy by default!
@@ -127,7 +122,7 @@ export default MyToggleComponent`}
           </HCodeBlock>
         </SampleCodeDropdown>
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 export default ThemeControlDetails;

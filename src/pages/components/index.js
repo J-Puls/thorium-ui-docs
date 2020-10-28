@@ -19,5 +19,5 @@ export default {
   icon: IconDetails,
   input: InputDetails,
   nav: NavDetails,
-  picture: PictureDetails
+  picture: PictureDetails,
 };

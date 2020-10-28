@@ -6,7 +6,6 @@ import { Code, Link, useCustomStyles, useTheme } from "thorium-ui";
 import {
   CodeBlockAPI,
   HCodeBlock,
-  PageBody,
   PageSection,
   SampleCodeDropdown,
   CodeBlockExample,
@@ -17,7 +16,7 @@ export const CodeBlockDetails = () => {
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>CodeBlock</p>
       <p style={cs.subheading}>
         <Code>CodeBlock</Code> provides a convenient way to share any text that
@@ -81,7 +80,7 @@ export default HCodeBlock;`}
         <p style={h2}>API</p>
         <CodeBlockAPI />
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 

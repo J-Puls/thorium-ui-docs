@@ -13,7 +13,6 @@ import {
 import {
   BurgerButtonExample,
   HCodeBlock,
-  PageBody,
   PageSection,
   SampleCodeDropdown,
 } from "components";
@@ -23,7 +22,7 @@ export const BurgerButtonDetails = () => {
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>BurgerButton</p>
       <div style={cs.subheading}>
         A <Code>BurgerButton</Code> is a pre-styled button to be used as the
@@ -131,7 +130,7 @@ export const BurgerButtonDetails = () => {
           </HCodeBlock>
         </SampleCodeDropdown>
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 

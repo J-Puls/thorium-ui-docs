@@ -10,30 +10,29 @@ import {
 /* Links */
 import { componentLinks, generalLinks } from "pages";
 
-const mapToLinks = (arr) => {
-  return arr.map(({ text, route }, key) => (
-    <Nav.Link to={route} key={key} navkey={route}>
-      <span style={{ paddingLeft: "1rem" }}>{text}</span>
-    </Nav.Link>
-  ));
-};
-
 export const SideMenu = () => {
+  const vpSizeName = useViewportSizeName();
   const cs = useCustomStyles();
   const theme = useTheme();
-  const vpSizeName = useViewportSizeName();
+  
+  // Only process and render component if viewport is larger than "sm"
+  if (!["md", "lg", "xl"].includes(vpSizeName)) return <></>;
 
+  const mapToLinks = (arr) => {
+    return arr.map(({ text, route }, key) => (
+      <Nav.Link to={route} key={key} navkey={route}>
+        <span style={{ paddingLeft: "1rem" }}>{text}</span>
+      </Nav.Link>
+    ));
+  };
   const style = { ...cs.sideMenu, ...theme.sideMenu };
-  return !["xs", "sm"].includes(vpSizeName) ? (
+  return (
     <Nav
       activeByURL
       defaultActive={window.location.pathname}
       trackActive
       variant="primary"
       vertical
-      md={3}
-      lg={2}
-      xl={2}
       style={style}
     >
       <details key={"Basics"} open>
@@ -57,8 +56,6 @@ export const SideMenu = () => {
         </Nav.Link>
       </details>
     </Nav>
-  ) : (
-    <></>
   );
 };
 

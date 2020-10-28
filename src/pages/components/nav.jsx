@@ -6,7 +6,6 @@ import { Code, useCustomStyles, useTheme } from "thorium-ui";
 import {
   HCodeBlock,
   NavDiagram,
-  PageBody,
   PageSection,
   SampleCodeDropdown,
   navExamples,
@@ -17,7 +16,7 @@ export const NavDetails = () => {
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <h1 style={cs.h1}>Nav</h1>
       <p style={cs.subheading}>
         <Code>Nav</Code> components provide a pre-styled navigation menu that
@@ -141,7 +140,7 @@ export const NavDetails = () => {
           </HCodeBlock>
         </SampleCodeDropdown>
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 

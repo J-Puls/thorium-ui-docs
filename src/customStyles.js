@@ -4,7 +4,8 @@ export const customStyles = (theme, colors) => ({
   body: {
     "font-family": "'Open Sans', 'Roboto', 'Montserrat', 'Arial', sans-serif",
     "font-size": "16px",
-    overflow: "hidden"
+    "max-height": "100vh",
+    // overflow: "hidden"
   },
   colorSwatch: {
     borderRadius: ".5em",
@@ -14,58 +15,59 @@ export const customStyles = (theme, colors) => ({
     marginLeft: ".5rem",
     marginRight: ".5rem",
     paddingBottom: ".5em",
-    paddingTop: ".5em"
+    paddingTop: ".5em",
   },
   diagram: {
     a: {
       border: `2px solid ${theme.colors.secondary}`,
       fontWeight: 700,
-      marginTop: "1rem"
+      marginTop: "1rem",
     },
     b: {
       border: `2px solid ${theme.colors.primary}`,
-      marginBottom: ".5rem"
+      marginBottom: ".5rem",
     },
     c: {
       border: `2px solid ${theme.colors.success}`,
-      marginBottom: ".5rem"
+      marginBottom: ".5rem",
     },
     d: {
       border: `2px solid ${theme.colors.danger}`,
-      marginBottom: ".5rem"
-    }
+      marginBottom: ".5rem",
+    },
   },
   h1: {
     fontFamily: "'Nunito', sans-serif",
     fontSize: "3.3rem",
     fontWeight: 700,
-    marginBottom: ".75rem"
+    marginBottom: ".75rem",
   },
   h2: {
     fontSize: "1.75rem",
     fontWeight: 700,
-    marginBottom: ".25rem"
+    marginBottom: ".25rem",
   },
   h3: {
     fontSize: "1.3rem",
     fontWeight: 500,
-    marginBottom: ".25rem"
+    marginBottom: ".25rem",
   },
   mb10: {
-    marginBottom: 10
+    marginBottom: 10,
   },
   metaNav: {
+    position: "sticky",
+    top: "calc(50px + 1.2rem)",
     borderLeft: `1px dashed gray`,
     height: "fit-content",
-    marginTop: "1rem",
-    paddingRight: 0
+    marginTop: "1rem"
   },
   mtp5: {
-    marginTop: ".5rem"
+    marginTop: ".5rem",
   },
   mx0: {
     marginLeft: 0,
-    marginRight: 0
+    marginRight: 0,
   },
   navSummary: {
     color: theme.colors.primary,
@@ -74,36 +76,39 @@ export const customStyles = (theme, colors) => ({
     fontWeight: "bold",
     marginBottom: 0,
     marginTop: "1rem",
-    paddingLeft: "1rem"
+    paddingLeft: "1rem",
   },
   p10: {
     paddingBottom: 10,
     paddingLeft: 10,
     paddingRight: 10,
-    paddingTop: 10
+    paddingTop: 10,
   },
   pageBody: {
-    height: "calc(100vh - 50px)",
+    // height: "100vh",
     margin: 0,
-    overflowY: "auto"
+    // paddingBottom: "2em",
+    // overflowY: "auto",
   },
   pageFooter: {
     marginTop: "2rem",
     paddingBottom: "3rem",
-    textAlign: "center"
+    textAlign: "center",
   },
   pageSection: {
     borderBottom: "1px solid gray",
-    paddingBottom: "1rem"
+    paddingBottom: "1rem",
   },
   pb2: {
-    border: `2px solid ${theme.colors.secondary}`
+    border: `2px solid ${theme.colors.secondary}`,
   },
   px0: {
     paddingLeft: 0,
-    paddingRight: 0
+    paddingRight: 0,
   },
   sideMenu: {
+    position: "sticky",
+    top: "50px",
     height: "calc(100vh - 50px)",
     left: 0,
     marginLeft: 0,
@@ -111,22 +116,22 @@ export const customStyles = (theme, colors) => ({
     paddingBottom: "5rem",
     paddingLeft: 0,
     paddingRight: 0,
-    position: "sticky",
-    top: 0
   },
   subheading: {
     fontSize: "1.3rem",
-    fontWeight: 100
+    fontWeight: 100,
   },
   topNav: {
+    position: "sticky",
+    top: "0",
     boxShadow: "0px 2px 3px #000000aa",
     color: colors.neutral.w4,
     height: "50px",
     marginLeft: 0,
     marginRight: 0,
     paddingBottom: ".5rem",
-    paddingTop: ".5rem"
-  }
+    paddingTop: ".5rem",
+  },
 });
 
 export default customStyles;

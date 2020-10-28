@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "thorium-ui";
 /* Custom Components */
-import { PageBody, PageSection } from "components";
+import { PageSection } from "components";
 
 export const PaletteDetails = () => {
   const cs = useCustomStyles();
@@ -26,8 +26,8 @@ export const PaletteDetails = () => {
   }
 
   return (
-    <PageBody>
-      <h1>Color Palette</h1>
+    <>
+      <p style={cs.h1}>Color Palette</p>
       <p style={cs.subheading}>
         By default, Thorium-UI contains three main color palettes:{" "}
         <Code>dark</Code> and <Code>light</Code> which coincide with their
@@ -50,7 +50,7 @@ export const PaletteDetails = () => {
                   sm={5}
                   md={5}
                   lg={5}
-                  xl={5}
+                  xl={3}
                   key={name}
                   style={cs.colorSwatch}
                 >
@@ -72,14 +72,14 @@ export const PaletteDetails = () => {
       </PageSection>
       <PageSection id="neutral-colors">
         <h2 style={h2}>Neutral Colors</h2>
-        <Layer>
+        <Layer justify="evenly">
           {neutralColors.map(({ name, value }) => (
             <Block
               xs={12}
               sm={5}
               md={5}
               lg={5}
-              xl={5}
+              xl={3}
               key={name}
               style={cs.colorSwatch}
             >
@@ -98,7 +98,7 @@ export const PaletteDetails = () => {
           ))}
         </Layer>
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 export default PaletteDetails;

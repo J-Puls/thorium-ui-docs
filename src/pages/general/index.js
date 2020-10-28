@@ -11,5 +11,5 @@ export default {
   "custom-themes": CustomThemesDetails,
   layout: LayoutDetails,
   palette: PaletteDetails,
-  "theme-control": ThemeControlDetails
+  "theme-control": ThemeControlDetails,
 };

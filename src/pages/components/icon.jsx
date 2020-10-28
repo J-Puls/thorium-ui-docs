@@ -13,7 +13,6 @@ import {
 import {
   HCodeBlock,
   IconExample,
-  PageBody,
   PageSection,
   SampleCodeDropdown,
 } from "components";
@@ -23,7 +22,7 @@ export const IconDetails = () => {
   const theme = useTheme();
   const h2 = { ...cs.h2, ...theme.h2 };
   return (
-    <PageBody>
+    <>
       <p style={cs.h1}>Icon</p>
       <p style={cs.subheading}>
         The <Code>Icon</Code> component provides a quick and easy way to
@@ -94,7 +93,7 @@ export const IconDetails = () => {
           </HCodeBlock>
         </SampleCodeDropdown>
       </PageSection>
-    </PageBody>
+    </>
   );
 };
 
